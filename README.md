@@ -1,8 +1,7 @@
+> forked of [wezterm.kak](https://github.com/Anomalocaridid/wezterm.kak)
+
 # wezterm.kak
 Provides basic [WezTerm](https://github.com/wez/wezterm) integration for Kakoune. Modeled after Kakoune's default windowing modules.
-
-# THIS REPO IS UNMAINTAINED
-I have started using a different editor for a while and I have had very little desire to develop or maintain this plugin ever since. I would like to thank everyone that used this and I am very glad that people other than I have found my plugin to be useful.
 
 # Installation
 With [plug.kak](https://github.com/andreyorst/plug.kak), add the following to your kakrc:
@@ -11,7 +10,14 @@ With [plug.kak](https://github.com/andreyorst/plug.kak), add the following to yo
         wezterm-integration-enable
     }
 
-Otherwise, add it to your autoload folder or source it manually, making sure to add `wezterm-integration-enable` to your kakrc.
+Otherwise, add it to your autoload folder or source it manually:
+```sh
+git clone https://github.com/sameoldlab/wezterm.kak {kak-config}/bundle/wezterm
+```
+then in your kakrc:
+
+	source "%val{config}/bundle/wezterm/wezterm.kak"
+	wezterm-integration-enable
 
 # Features
 Currently, only splitting the window into panes, and opening a command in a new tab or window are supported. I was unable to find a way to use WezTerm's command-line interface to focus a given client or send text to a REPL. Since WezTerm is fairly new, that functionality may not even be currently supported yet.
